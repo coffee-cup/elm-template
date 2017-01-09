@@ -3,6 +3,15 @@ module View exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (class, href, classList)
 import Html.Events exposing (onClick)
+import Date exposing (Date, fromTime)
+import Time exposing (Time)
+import Svg exposing (circle, line, svg)
+import Svg.Attributes
+import Utils exposing (formatTime)
+
+
+--import Svg.Attributes exposing (..)
+
 import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Routing exposing (Sitemap(..))
@@ -13,7 +22,6 @@ view : Model -> Html Msg
 view model =
     div [ class "ph6-ns ph4-m ph3" ]
         [ div [ class "full" ] [ page model ]
-        , footer
         ]
 
 
@@ -44,6 +52,24 @@ header model =
         ]
 
 
+clock : Time -> Html Msg
+clock time =
+    let
+        angle =
+            turns (Time.inMinutes time)
+
+        handX =
+            toString (50 + 40 * cos angle)
+
+        handY =
+            toString (50 + 40 * sin angle)
+    in
+        svg [ Svg.Attributes.viewBox "0 0 100 100", Svg.Attributes.width "300px" ]
+            [ circle [ Svg.Attributes.cx "50", Svg.Attributes.cy "50", Svg.Attributes.r "45", Svg.Attributes.fill "#0B79CE" ] []
+            , line [ Svg.Attributes.x1 "50", Svg.Attributes.y1 "50", Svg.Attributes.x2 handX, Svg.Attributes.y2 handY, Svg.Attributes.stroke "#023963" ] []
+            ]
+
+
 counter : Int -> Html Msg
 counter counter =
     div [ class "counter f1" ]
@@ -62,14 +88,20 @@ footer =
         ]
 
 
+timeDisplay : Time -> Html Msg
+timeDisplay time =
+    div [ class "time-display w-100" ]
+        [ h1 [ class "f-headline-ns f-subheadline mv0 tc" ] [ text (formatTime time) ] ]
+
+
 
 -- Sample Routes
 
 
 homeView : Model -> Html Msg
 homeView model =
-    div []
-        [ header model
+    div [ class "full vertical-center" ]
+        [ timeDisplay model.time
         ]
 
 
