@@ -1,6 +1,6 @@
-# jakerunzer-xyz
+# elm-template
 
-This is the code for [jakerunzer.xyz](http://jakerunzer.xyz). It is written in [Elm](http://elm-lang.org/) and also serves as a nice Elm + Webpack template.
+This is a simple static website template using [Elm](http://elm-lang.org).
 
 ## Features 💥
 
@@ -22,8 +22,6 @@ This is the code for [jakerunzer.xyz](http://jakerunzer.xyz). It is written in [
 4. `npm run build` for production ready static site
 
 ### Source 👼
-
-
 
 - Elm in `src/`
 - SCSS in `src/scss`
