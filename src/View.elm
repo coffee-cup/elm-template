@@ -34,12 +34,22 @@ page model =
             notFoundView
 
 
-header : Html Msg
-header =
+header : Model -> Html Msg
+header model =
     div [ class "header bold full vertical-center" ]
         [ div []
             [ h1 [ class "f-headline-ns f-subheadline mv0" ] [ text "Hello." ]
+            , counter model.counter
             ]
+        ]
+
+
+counter : Int -> Html Msg
+counter counter =
+    div [ class "counter f1" ]
+        [ span [ onClick (Decrease 1), class "pointer" ] [ text "-" ]
+        , span [ class "ph4" ] [ text (toString counter) ]
+        , span [ onClick (Increase 1), class "pointer" ] [ text "+" ]
         ]
 
 
@@ -59,7 +69,7 @@ footer =
 homeView : Model -> Html Msg
 homeView model =
     div []
-        [ header
+        [ header model
         ]
 
 
