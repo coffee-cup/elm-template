@@ -1,6 +1,5 @@
 module Messages exposing (..)
 
-import Time exposing (Time)
 import Navigation exposing (Location)
 
 
@@ -10,4 +9,3 @@ type Msg
     | Decrease Int
     | ShowHome
     | ShowAbout
-    | Tick Time

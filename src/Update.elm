@@ -3,7 +3,6 @@ port module Update exposing (..)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Routing exposing (parseLocation, navigateTo, Sitemap(..))
-import Utils exposing (formatTime)
 
 
 port scrollToTop : Bool -> Cmd msg
@@ -46,6 +45,3 @@ update msg model =
 
         Decrease amount ->
             ( { model | counter = model.counter - amount }, Cmd.none )
-
-        Tick newTime ->
-            ( { model | time = newTime }, changeMetadata (formatTime newTime) )
