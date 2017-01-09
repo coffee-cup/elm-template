@@ -1,6 +1,6 @@
 # elm-template
 
-This is a simple static website template using [Elm](http://elm-lang.org).
+This is a simple static website template using [Elm](http://elm-lang.org). [Here is an example of this template](https://coffee-cup-elm-template.surge.sh/).
 
 ## Features 💥
 
