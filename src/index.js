@@ -2,6 +2,7 @@
 
 // Import CSS
 require('tachyons/css/tachyons.css');
+require('normalize-css');
 
 require('./scss/main.scss');
 
