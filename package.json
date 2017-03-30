@@ -4,8 +4,8 @@
   "description": "Static website template using Elm.",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --progress",
-    "dev": "NODE_ENV=development webpack-dev-server --hot --inline --progress",
+    "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --inline --progress",
     "start": "npm run dev",
     "copy": "cp -r public/* build; cp public/index.html build/200.html; cp public/index.html build/404.html",
     "clean": "rimraf build",
@@ -26,6 +26,7 @@
     "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.2.2",
+    "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "elm": "^0.18.0",
     "elm-hot-loader": "^0.5.4",
