@@ -25,10 +25,20 @@ sitemap =
     router [ homeR, aboutR ]
 
 
+removeTrailingSlash : String -> String
+removeTrailingSlash s =
+    if (String.endsWith "/" s) && (String.length s > 1) then
+        String.dropRight 1 s
+    else
+        s
+
+
 match : String -> Sitemap
-match =
-    Route.match sitemap
-        >> Maybe.withDefault NotFoundRoute
+match s =
+    s
+        |> removeTrailingSlash
+        |> Route.match sitemap
+        |> Maybe.withDefault NotFoundRoute
 
 
 toString : Sitemap -> String
