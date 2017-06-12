@@ -32,7 +32,7 @@ This is a simple static website template using [Elm](http://elm-lang.org). [Here
 
 This template can easily be deployed with [surge.sh](https://surge.sh/). Just open up `package.json` and change `...` in the `deploy` script to your domain. Then run `npm run deploy` and your website will be built and deployed!
 
-### A note on page metadata.
+### A Note on Page Metadata
 
 The problem with static single page apps is that metadata (title, description) is set after the page has initially loaded. This means it is not picked up in site previews, such as sharing to Slack, FB, Twitter, etc.
 
