@@ -7,6 +7,7 @@ This is a simple static website template using [Elm](http://elm-lang.org). [Here
 - [Elm](http://elm-lang.org/)
 - [ES6](https://github.com/lukehoban/es6features)
 - [ESLint](http://eslint.org/)
+- [Prettier](https://github.com/prettier/prettier)
 - [Webpack](https://webpack.github.io/)
 - [PostCSS](https://github.com/postcss/postcss)
 - [SCSS](http://sass-lang.com/)
