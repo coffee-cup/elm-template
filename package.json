@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p --progress",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --inline --progress",
+    "dev":
+      "cross-env NODE_ENV=development webpack-dev-server --hot --inline --progress",
     "start": "npm run dev",
-    "copy": "cp -r public/* build; cp public/index.html build/200.html; cp public/index.html build/404.html",
+    "copy":
+      "cp -r public/* build; cp public/index.html build/200.html; cp public/index.html build/404.html",
     "clean": "rimraf build",
     "pages": "node metadata/metadata.js",
     "prebuild": "npm run clean",
     "postbuild": "npm run copy && npm run pages",
     "predeploy": "npm run build",
     "deploy": "surge build/ https://coffee-cup-elm-template.surge.sh",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "postinstall": "npm run build"
   },
   "author": "Jake Runzer <jakerunzer@gmail.com> (https://jakerunzer.xyz)",
   "license": "MIT",
