@@ -17,10 +17,14 @@
     "predeploy": "npm run build",
     "deploy": "surge build/ https://coffee-cup-elm-template.surge.sh",
     "test": "echo \"Error: no test specified\"",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "author": "Jake Runzer <jakerunzer@gmail.com> (https://jakerunzer.xyz)",
   "license": "MIT",
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  },
   "dependencies": {
     "normalize-css": "^2.3.1",
     "tachyons": "^4.6.2"
