@@ -22,7 +22,7 @@
   "author": "Jake Runzer <jakerunzer@gmail.com> (https://jakerunzer.xyz)",
   "license": "MIT",
   "engines": {
-    "node": ">=8.4.0",
+    "node": ">=8.6.0",
     "npm": ">=5.3.0"
   },
   "dependencies": {
